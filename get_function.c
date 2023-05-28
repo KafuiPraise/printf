@@ -17,8 +17,8 @@ int get_func(va_list l, char k, char c)
 		count += print_c(l);
 	else if (c == 's')
 		count += print_s(l);
-	else if (c == 'd' || c == 'r')
-		count += print_r(l);
+	else if (c == 'd' || c == 'g')
+		count += print_p(l);
 	else if (c == '%')
 	{
 		write(1, "%", 1);

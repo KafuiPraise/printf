@@ -9,9 +9,7 @@
 int _printf(const char *format, ...)
 {
 	va_list l;
-
-	int = r;
-
+	int g = 0;
 	int count = 0;
 
 	va_start(l, format);
@@ -21,32 +19,35 @@ int _printf(const char *format, ...)
 	if (format[0] == '%' && format[1] == ' ' && !format[2])
 		return (-1);
 
-	while (format[r])
+	while (format[g])
 	{
-		if (format[r] == '%')
+		if (format[g] == '%')
 		{
-			r++;
-			if (!format[r] || (format[r] == ' ' && !format[r + 1]))
+			g++;
+			if (!format[g] || (format[g] == ' ' && !format[g + 1]))
 			{
 				count = -1;
 				break;
 			}
-			else if (format[r])
+			else if (format[g])
 			{
-				count += get_func(l, format[r - 1], format[r]);
+				count += get_func(l, format[g - 1], format[g]);
 			}
 		}
 		else
 		{
-			write(1, &format[r], 1);
+			write(1, &format[g], 1);
 			count++;
 		}
-		r++;
+	
+		g++;
 	}
 
 	va_end(l);
 	return (count);
 }
+
+
 
 
 
