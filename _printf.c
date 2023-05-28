@@ -21,11 +21,11 @@ int _printf(const char *format, ...)
 	if (format[0] == '%' && format[1] == ' ' && !format[2])
 		return (-1);
 
-	while (format[i])
+	while (format[r])
 	{
 		if (format[r] == '%')
 		{
-			i++;
+			r++;
 			if (!format[r] || (format[r] == ' ' && !format[r + 1]))
 			{
 				count = -1;
@@ -41,7 +41,7 @@ int _printf(const char *format, ...)
 			write(1, &format[r], 1);
 			count++;
 		}
-		i++;
+		r++;
 	}
 
 	va_end(l);
@@ -95,7 +95,7 @@ int get_func(va_list l, char k, char c)
 	{
 		write(1, &k, 1);
 		write(1, &c, 1);
-		counter += 2;
+		count += 2;
 	}
 	return (count);
 }

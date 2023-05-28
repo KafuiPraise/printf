@@ -25,4 +25,3 @@ int print_S(va_list l);
 int print_p(va_list l);
 int get_func(va_list l, char k, char c);
 #endif /* MAIN_H */
-
