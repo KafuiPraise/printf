@@ -9,7 +9,9 @@
 int _printf(const char *format, ...)
 {
 	va_list l;
+
 	int = r;
+
 	int count = 0;
 
 	va_start(l, format);
