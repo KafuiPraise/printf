@@ -44,3 +44,31 @@ int print_s(va_list l)
 	return (ctr);
 }
 
+/**
+ * print_rev - Reverses a string and outputs it.
+ * @l: List of inputs containing the string to be printed
+ *
+ * Return: The length of the string data
+ */
+int print_rev(va_list l)
+{
+	char *str = va_arg(l, char *);
+	int length = 0, j, retVal;
+
+	if (!str)
+		str = "(null)";
+
+	while (str[length] != '\0')
+		length++;
+
+	for (j = length - 1; j >= 0; j--)
+	{
+		retVal = write(1, &str[j], 1);
+		if (retVal == -1)
+			return (-1);
+	}
+
+	return (length);
+}
+
+
