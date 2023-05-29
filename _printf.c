@@ -39,7 +39,6 @@ int _printf(const char *format, ...)
 			write(1, &format[g], 1);
 			count++;
 		}
-	
 		g++;
 	}
 
