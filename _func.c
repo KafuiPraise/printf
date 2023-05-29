@@ -8,11 +8,11 @@
  */
 int print_c(va_list l)
 {
-	int retVal;
+	int rokaf;
 	char c = va_arg(l, int);
 
-	retVal = write(STDOUT_FILENO, &c, 1);
-	return (retVal);
+	rokaf = write(STDOUT_FILENO, &c, 1);
+	return (rokaf);
 }
 
 /**
@@ -24,7 +24,7 @@ int print_c(va_list l)
 int print_s(va_list l)
 {
 	char *str = NULL;
-	int ctr = 0, retVal;
+	int ctr = 0, rokaf;
 
 	str = va_arg(l, char*);
 
@@ -35,8 +35,8 @@ int print_s(va_list l)
 
 	while (*str != '\0')
 	{
-		retVal = write(STDOUT_FILENO, str, 1);
-		if (retVal == -1)
+		rokaf = write(STDOUT_FILENO, str, 1);
+		if (rokaf == -1)
 			return (-1);
 		str++;
 		ctr++;
@@ -53,7 +53,7 @@ int print_s(va_list l)
 int print_rev(va_list l)
 {
 	char *str = va_arg(l, char *);
-	int length = 0, j, retVal;
+	int length = 0, j, rokaf;
 
 	if (!str)
 		str = "(null)";
@@ -63,12 +63,10 @@ int print_rev(va_list l)
 
 	for (j = length - 1; j >= 0; j--)
 	{
-		retVal = write(1, &str[j], 1);
-		if (retVal == -1)
+		rokaf = write(1, &str[j], 1);
+		if (rokaf == -1)
 			return (-1);
 	}
 
 	return (length);
 }
-
-
