@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * print_i - Prints an integer
- * @l: List of arguments
+ * print_i - display an integer
+ * @l: print list of arguments
  *
- * Return: Number of digits printed
+ * Return: quantity of digits printed
  **/
 int print_i(va_list l)
 {
@@ -46,10 +46,10 @@ int print_i(va_list l)
 }
 
 /**
- * print_u - Prints an unsigned integer
- * @l: List of arguments
+ * print_u - Displays an unsigned integer
+ * @l: Print list of arguments
  *
- * Return: Number of digits printed
+ * Return: display of digits printed
  **/
 int print_u(va_list l)
 {
